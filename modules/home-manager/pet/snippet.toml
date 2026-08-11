@@ -1,0 +1,157 @@
+[[snippets]]
+  description = "add Minikube management address to no_proxy"
+  command = "set -x no_proxy $no_proxy,(minikube ip); set -x NO_PROXY $no_proxy"
+  output = ""
+
+[[snippets]]
+  description = "convert asciinema to gif in Docker"
+  command = "docker run --rm -v $PWD:/data asciinema/asciicast2gif <IN_FILE=terminal.cast> <OUT_FILE=terminal.gif>"
+  output = ""
+
+[[snippets]]
+  description = "convert pkcs12 to pem"
+  command = "openssl pkcs12 -in <P12_FILE=voip_service.p12> -out <PEM_FILE=voip_service.pem> -nodes -clcerts"
+  output = ""
+
+[[snippets]]
+  description = "convert unix time to date"
+  command = "date -d @<UNIX_TIME> +\"%Y/%m/%d %T\""
+  tag = ["linux"]
+  output = ""
+
+[[snippets]]
+  description = "convert unix time to date"
+  command = "date -r <UNIX_TIME>"
+  tag = ["mac"]
+  output = ""
+
+[[snippets]]
+  description = "delete python cache files/directories"
+  command = "find . -type d -name __pycache__ | xargs rm -rf"
+  output = ""
+
+[[snippets]]
+  description = "execute Bash script from URL"
+  command = "curl -s <URL> | bash -s"
+  output = ""
+
+[[snippets]]
+  description = "execute Python script from URL"
+  command = "curl -s <URL> | python /dev/stdin"
+  output = ""
+
+[[snippets]]
+  description = "execute Ruby script from URL"
+  command = "curl -s <URL> | ruby /dev/stdin"
+  output = ""
+
+[[snippets]]
+  description = "export docker environment variables of Minikube"
+  command = "eval (minikube docker-env --shell=fish)"
+  output = ""
+
+[[snippets]]
+  description = "find dead link on Linux"
+  command = "find <PATH=.> -xtype l"
+  output = ""
+
+[[snippets]]
+  description = "find dead link on macOS/BSD"
+  command = "find -L <PATH=.> -type l"
+  output = ""
+
+[[snippets]]
+  description = "reload gpg-agent"
+  command = "gpgconf --reload gpg-agent"
+  output = ""
+
+[[snippets]]
+  description = "reopen specified encoding in vim normal mode"
+  command = ":e ++enc=<ENCODING=utf-8>"
+  tag = ["vim"]
+  output = ""
+
+[[snippets]]
+  description = "selectively git checkout"
+  command = "git checkout (git branch | grep -v '^*' | tr -d ' ' | fzf)"
+  output = ""
+
+[[snippets]]
+  description = "selectively git show from git logs"
+  command = "git show (git log --oneline | fzf | awk '{ print $1 }')"
+  output = ""
+
+[[snippets]]
+  description = "selectively rake"
+  command = "eval (rake -T | fzf | awk -F# '{ print $1 }')"
+  output = ""
+
+[[snippets]]
+  description = "selectively xcode-select"
+  command = "sudo xcode-select -s (ls -1d /Applications/* | grep Xcode | fzf)"
+  output = ""
+
+[[snippets]]
+  description = "set kubectl configuration file selectively"
+  command = "set -x KUBECONFIG (find -L ~/.kube -type f -name \"config\" -o -name \"*kubeconfig\" | sort | fzf)"
+  output = ""
+
+[[snippets]]
+  description = "show a table schema in postgres shell"
+  command = "\\d <TABLE_NAME>"
+  tag = ["postgres", "psql"]
+  output = ""
+
+[[snippets]]
+  description = "show access privileges of table in postgres shell"
+  command = "\\z info"
+  tag = ["postgres", "psql"]
+  output = ""
+
+[[snippets]]
+  description = "show all databases in postgres shell"
+  command = "\\l"
+  tag = ["postgres", "psql"]
+  output = ""
+
+[[snippets]]
+  description = "show all tables in postgres shell"
+  command = "\\dt"
+  tag = ["postgres", "psql"]
+  output = ""
+
+[[snippets]]
+  description = "show current unix time"
+  command = "date +%s"
+  output = ""
+
+[[snippets]]
+  description = "start recording terminal"
+  command = "asciinema rec -c <COMMAND=fish> <FILE=terminal.cast>"
+  output = ""
+
+[[snippets]]
+  description = "start traproxy"
+  command = "sudo traproxy -proxyaddr (echo $http_proxy | awk -F// '{ print $2 }')"
+  output = ""
+
+[[snippets]]
+  description = "switch database in postgres shell"
+  command = "\\c <DATABASE_NAME>"
+  tag = ["postgres", "psql"]
+  output = ""
+
+[[snippets]]
+  description = "unset docker environment variables of Minikube"
+  command = "eval (minikube docker-env -u --shell=fish)"
+  output = ""
+
+[[snippets]]
+  description = "unset kubectl configuration file"
+  command = "set -x KUBECONFIG ''"
+  output = ""
+
+[[snippets]]
+  description = "update pinentry tty"
+  command = "gpg-connect-agent updatestartuptty /bye"
+  output = ""

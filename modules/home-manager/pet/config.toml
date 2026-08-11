@@ -1,0 +1,10 @@
+[General]
+  Backend = "gist"
+  Cmd = []
+  Color = false
+  Column = 40
+  Editor = "vim"
+  Format = "[$description]: $command $tags"
+  SelectCmd = "fzf --prompt='Snippets> '"
+  SnippetFile = "~/.config/pet/snippet.toml"
+  SortBy = ""
