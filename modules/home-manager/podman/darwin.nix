@@ -1,33 +1,21 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+{
+  config = lib.mkIf pkgs.stdenv.isDarwin {
+    launchd.agents.podman = {
+      enable = true;
 
-let
-  podmanMachineName = "podman-machine-default";
-in
-lib.mkIf pkgs.stdenv.isDarwin {
-  config.home.activation = {
-    initPodmanMachine = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      PODMAN="${pkgs.podman}/bin/podman"
-      if ! $PODMAN machine list --format "{{.Name}}" | grep -E -q "^${podmanMachineName}\*?$"; then
-        $DRY_RUN_CMD $PODMAN machine init --memory 4096
-      fi
-    '';
-  };
-
-  config.launchd.agents.podman = {
-    enable = true;
-
-    config = {
-      AbandonProcessGroup = true;
-      RunAtLoad = true;
-      ProgramArguments = [
-        "${pkgs.podman}/bin/podman"
-        "machine"
-        "start"
-        "${podmanMachineName}"
-      ];
-      StandardOutPath = "/tmp/podman.out.log";
-      StandardErrorPath = "/tmp/podman.err.log";
-      Timeout = 60;
+      config = {
+        AbandonProcessGroup = true;
+        RunAtLoad = true;
+        ProgramArguments = [
+          "${pkgs.podman}/bin/podman"
+          "machine"
+          "start"
+        ];
+        StandardOutPath = "/tmp/podman.out.log";
+        StandardErrorPath = "/tmp/podman.err.log";
+        Timeout = 60;
+      };
     };
   };
 }
