@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.tmux = {
+  config.programs.tmux = {
     plugins = [
       {
         plugin = pkgs.tmuxPlugins.minimal-tmux-status;

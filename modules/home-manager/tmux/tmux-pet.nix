@@ -6,7 +6,7 @@
     ../pet
   ];
 
-  programs.tmux = {
+  config.programs.tmux = {
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.mkTmuxPlugin {

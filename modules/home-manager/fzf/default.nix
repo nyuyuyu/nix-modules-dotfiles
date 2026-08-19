@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home = {
+  config.home = {
     packages = [
       pkgs.fzf
     ];

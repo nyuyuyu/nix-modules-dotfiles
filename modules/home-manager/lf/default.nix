@@ -1,11 +1,11 @@
 { ... }:
 
 {
-  home.shellAliases = {
+  config.home.shellAliases = {
     fd = "lf";
   };
 
-  programs.lf = {
+  config.programs.lf = {
     enable = true;
 
     keybindings = {

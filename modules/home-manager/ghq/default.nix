@@ -8,7 +8,7 @@ let
 in
 
 {
-  home = {
+  config.home = {
     activation.createGhqRoot = lib.hm.dag.entryAfter ["writeBoundary"] (
       lib.concatMapStrings (dir: ''
         $DRY_RUN_CMD mkdir -p ${dir}
@@ -20,7 +20,7 @@ in
     ];
   };
 
-  programs.git = {
+  config.programs.git = {
     enable = true;
 
     settings = {

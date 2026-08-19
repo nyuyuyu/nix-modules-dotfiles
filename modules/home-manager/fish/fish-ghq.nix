@@ -6,12 +6,12 @@
     ../ghq
   ];
 
-  home.sessionVariables = {
+  config.home.sessionVariables = {
     GHQ_SELECTOR = "fzf";
     GHQ_SELECTOR_OPTS = "--prompt=Repos> ";
   };
 
-  programs.fish = {
+  config.programs.fish = {
     plugins = [
       {
         name = "ghq";

@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  home = {
+  config.home = {
     sessionVariables = {
       LANG = "ja_JP.UTF-8";
     };
@@ -15,7 +15,7 @@
     };
   };
 
-  programs.fish = {
+  config.programs.fish = {
     enable = true;
 
     interactiveShellInit = ''

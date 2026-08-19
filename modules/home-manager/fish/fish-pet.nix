@@ -6,7 +6,7 @@
     ../pet
   ];
 
-  programs.fish = {
+  config.programs.fish = {
     binds = {
       "\\cs" = { # Ctrl + s
         command = "pet-select";

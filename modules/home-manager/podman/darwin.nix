@@ -4,7 +4,7 @@ let
   podmanMachineName = "podman-machine-default";
 in
 lib.mkIf pkgs.stdenv.isDarwin {
-  home.activation = {
+  config.home.activation = {
     initPodmanMachine = lib.hm.dag.entryAfter ["writeBoundary"] ''
       PODMAN="${pkgs.podman}/bin/podman"
       if ! $PODMAN machine list --format "{{.Name}}" | grep -E -q "^${podmanMachineName}\*?$"; then
@@ -13,7 +13,7 @@ lib.mkIf pkgs.stdenv.isDarwin {
     '';
   };
 
-  launchd.agents.podman = {
+  config.launchd.agents.podman = {
     enable = true;
 
     config = {

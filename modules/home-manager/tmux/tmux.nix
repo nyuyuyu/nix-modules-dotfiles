@@ -6,7 +6,7 @@
     ../fish
   ];
 
-  programs.tmux = {
+  config.programs.tmux = {
     enable = true;
 
     keyMode = "vi";

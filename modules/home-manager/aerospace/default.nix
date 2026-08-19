@@ -6,7 +6,7 @@
     ../alacritty
   ];
 
-  programs.aerospace = {
+  config.programs.aerospace = {
     enable = true;
 
     launchd = {

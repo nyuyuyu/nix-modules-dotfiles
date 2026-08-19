@@ -6,7 +6,7 @@
     ../fzf
   ];
 
-  programs.fish = {
+  config.programs.fish = {
     plugins = with pkgs; [
       {
         name = fishPlugins.fzf-fish.pname;

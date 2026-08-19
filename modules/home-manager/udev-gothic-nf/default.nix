@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 {
-  home = {
+  config.home = {
     packages = [
       pkgs.udev-gothic-nf
     ];
   };
 
-  fonts.fontconfig.enable = true;
+  config.fonts.fontconfig.enable = true;
 }

@@ -7,7 +7,7 @@
     ../udev-gothic-nf
   ];
 
-  programs.alacritty = {
+  config.programs.alacritty = {
     enable = true;
     package = pkgs.alacritty-graphics; # Sixel enabled
     settings = {

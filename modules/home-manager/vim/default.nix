@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  home = {
+  config.home = {
     file = {
       ".vimrc" = {
         source = ./.vimrc;
@@ -13,7 +13,7 @@
     };
   };
 
-  programs.vim = {
+  config.programs.vim = {
     enable = true;
 
     defaultEditor = true;

@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  home = {
+  config.home = {
     # Dependencies
     packages = [
       pkgs.curl
@@ -15,7 +15,7 @@
     };
   };
 
-  programs.mise = {
+  config.programs.mise = {
     enable = true;
 
     globalConfig = {

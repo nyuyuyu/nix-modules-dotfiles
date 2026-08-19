@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.git = {
+  config.programs.git = {
     enable = true;
 
     settings = {

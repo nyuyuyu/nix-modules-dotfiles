@@ -5,7 +5,7 @@
     ./darwin.nix
   ];
 
-  home = {
+  config.home = {
     packages = [
       pkgs.podman
     ];

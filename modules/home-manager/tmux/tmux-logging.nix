@@ -4,13 +4,13 @@ let
   logDir = "${config.home.homeDirectory}/var/log/console";
 in
 {
-  home.activation = {
+  config.home.activation = {
     createLogDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
       $DRY_RUN_CMD mkdir -p ${logDir}
     '';
   };
 
-  programs.tmux = {
+  config.programs.tmux = {
     plugins = [
       {
         plugin = pkgs.tmuxPlugins.logging;

@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  programs.fish = {
+  config.programs.fish = {
     interactiveShellInit = ''
       if not set -q tide_left_prompt_items
         tide configure \
