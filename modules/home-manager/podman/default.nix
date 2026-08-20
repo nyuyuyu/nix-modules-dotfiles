@@ -37,25 +37,12 @@ in
       pkgs.podman
     ];
 
-    file.".config/containers/registries.conf".text = ''
-      unqualified-search-registries = ["docker.io"]
-    '';
+    file = {
+      ".config/containers/containers.conf".source = ./containers.conf;
+      ".config/containers/registries.conf".source = ./registries.conf;
+    };
 
     activation = {
-      ensureContainersRemoteConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        CONF="$HOME/.config/containers/containers.conf"
-        $DRY_RUN_CMD mkdir -p "$HOME/.config/containers"
-        if ! test -f "$CONF"; then
-          $DRY_RUN_CMD touch "$CONF"
-        fi
-        if ! grep -q '^\[engine\]' "$CONF"; then
-          $DRY_RUN_CMD printf '\n[engine]\n' >> "$CONF"
-        fi
-        if ! grep -q '^remote[[:space:]]*=' "$CONF"; then
-          $DRY_RUN_CMD sed -i '/^\[engine\]/a remote = true' "$CONF"
-        fi
-      '';
-
       initPodmanMachine = lib.hm.dag.entryAfter ["writeBoundary"] ''
         PODMAN="${moduleConfig.package}/bin/podman"
         if ! $PODMAN machine list --format "{{.Name}}" | grep -E -q "^podman-machine-default\*?$"; then
