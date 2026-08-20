@@ -47,6 +47,7 @@
           "terminal.integrated.defaultProfile.linux" = "fish";
           "terminal.integrated.defaultProfile.osx" = "fish";
           "terminal.integrated.initialHint" = false;
+          "terminal.integrated.stickyScroll.enabled" = false;
 
           "workbench.editor.enablePreview" = false;
           "workbench.fontAliasing" = "auto";
