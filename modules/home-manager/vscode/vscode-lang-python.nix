@@ -6,7 +6,10 @@
       default = {
         extensions = pkgs.nix4vscode.forVscode [
           "charliermarsh.ruff"
+          "ms-python.debugpy"
           "ms-python.python"
+          "ms-python.vscode-pylance"
+          "ms-python.vscode-python-envs"
         ];
 
         userSettings = {
