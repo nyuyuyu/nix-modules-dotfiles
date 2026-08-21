@@ -17,6 +17,8 @@
             markdown = false;
             scminput = false;
           };
+
+          "workbench.secondarySideBar.defaultVisibility" = "hidden";
         };
       };
     };
