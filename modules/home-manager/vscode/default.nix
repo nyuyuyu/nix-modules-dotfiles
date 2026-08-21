@@ -5,6 +5,7 @@
     ./vscode-ext-github-copilot.nix
     ./vscode-ext-gitignore.nix
     ./vscode-ext-indent-rainbow.nix
+    ./vscode-ext-mise.nix
     ./vscode-ext-remote-containers.nix
     ./vscode-ext-remote-ssh.nix
     ./vscode-ext-vscodevim.nix

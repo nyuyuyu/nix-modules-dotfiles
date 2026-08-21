@@ -13,6 +13,7 @@
           "remote.SSH.defaultExtensions" = [
             "github.copilot"
             "github.copilot-chat"
+            "hverlin.mise-vscode"
             "mosapride.zenkaku"
             "MS-CEINTL.vscode-language-pack-ja"
           ];
