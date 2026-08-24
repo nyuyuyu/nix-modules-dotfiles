@@ -3,7 +3,17 @@
 {
   config.programs.antigravity-cli = {
     enable = true;
-  };
 
-  # config.home.file.".gemini/antigravity-cli/settings.json".source = ./settings.json;
+    permissions = {
+      ask = [
+        "read_file(*)",
+        "write_file(*)",
+        "command(*)",
+        "read_url(*)",
+        "execute_url(*)",
+        "mcp(*)",
+        "unsandboxed(*)"
+      ];
+    };
+  };
 }
