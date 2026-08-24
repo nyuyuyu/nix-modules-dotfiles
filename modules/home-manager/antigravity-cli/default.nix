@@ -1,9 +1,9 @@
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   config.programs.antigravity-cli = {
     enable = true;
-    package = nixpkgs-unstable.antigravity-cli;
+    package = pkgs-unstable.antigravity-cli;
 
     permissions = {
       ask = [
