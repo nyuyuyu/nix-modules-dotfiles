@@ -3,6 +3,7 @@
 {
   config.programs.antigravity-cli = {
     enable = true;
+    package = pkgs.antigravity-cli;
 
     permissions = {
       ask = [
