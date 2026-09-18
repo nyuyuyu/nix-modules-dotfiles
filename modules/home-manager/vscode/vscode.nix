@@ -28,6 +28,8 @@
           "editor.insertSpaces" = true;
           "editor.minimap.enabled" = false;
           "editor.snippetSuggestions" = "top";
+          "editor.scrollbar.horizontal" = "hidden";
+          "editor.scrollbar.vertical" = "hidden";
           "editor.tabCompletion" = "on";
           "editor.tabSize" = 4;
 
