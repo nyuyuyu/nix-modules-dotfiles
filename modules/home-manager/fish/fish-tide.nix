@@ -10,7 +10,7 @@
           --prompt_colors='True color' \
           --show_time=No \
           --lean_prompt_height='Two lines' \
-          --prompt_connection=Solid \
+          --prompt_connection=Disconnected \
           --prompt_connection_andor_frame_color=Lightest \
           --prompt_spacing=Compact \
           --icons='Few icons' \
