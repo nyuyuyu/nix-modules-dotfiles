@@ -2,8 +2,9 @@
 
 {
   config.home.shellAliases = {
-    opencode = "nix run nixpkgs#opencode";
+    opencode = "nix shell nixpkgs#nodejs -c npx -y @opencode/cli@latest --standalone";
   };
 
-  config.xdg.configFile."opencode/opencode.json".source = ./config.json;
+  config.xdg.configFile."opencode/opencode.jsonc".source = ./opencode.jsonc;
+  config.xdg.configFile."opencode/cli.json".source = ./cli.json;
 }
