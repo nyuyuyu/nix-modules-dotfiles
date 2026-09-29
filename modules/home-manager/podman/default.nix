@@ -5,8 +5,8 @@ let
 in
 {
   imports = [
-    ./darwin.nix
-    ./linux.nix
+    ./darwin
+    ./linux
   ];
 
   options.podman.machine = {
