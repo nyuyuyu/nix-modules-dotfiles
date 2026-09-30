@@ -3,5 +3,6 @@
   "permissions": [
     { "action": "*", "resource": "*", "effect": "ask" }
   ],
-  "shared": "disabled"
+  "shared": "disabled",
+  "update": "disable"
 }
